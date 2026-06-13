@@ -64,6 +64,30 @@
             background: linear-gradient(180deg, rgba(5,5,7,0.5) 0%, rgba(5,5,7,0.3) 50%, rgba(5,5,7,0.8) 100%);
             z-index: -1;
         }
+ .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem; /* Expanded spacing to welcome the larger logo presence[cite: 6] */
+            cursor: pointer;
+        }
+
+        .navbar-emblem {
+            width: 52px;         /* Increased from 42px to zoom default view size[cite: 6] */
+            height: 52px;
+            object-fit: contain; /* Prevents compression or structural distortion[cite: 6] */
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+            
+            /* Premium hardware-accelerated transition smoothing[cite: 6] */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
+
+        /* Fluid, responsive magnetic zoom effect when hovering over the logo container[cite: 6] */
+        .logo:hover .navbar-emblem {
+            transform: scale(1.12); /* Zooms emblem cleanly by 12% on hover actions[cite: 6] */
+            filter: drop-shadow(0 6px 16px rgba(255, 59, 66, 0.25)) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+        }
 
         /* ==========================================================================
            NAVIGATION BAR COMPONENT LAYOUT
@@ -266,22 +290,22 @@
 
     <!-- ================= FIXED BACKDROP IMAGERY ================= -->
     <div class="static-image-backdrop">
-        <img src="ChatGPT Image Jun 12, 2026, 11_03_00 PM.png" alt="Backdrop Element">
+        <img src="find.png" alt="Backdrop Element">
     </div>
     <div class="video-overlay"></div>
 
     <!-- ================= NAVIGATION HEADER ================= -->
     <header class="navbar">
         <div class="logo">
-            <i class="fa-solid fa-droplet"></i>
+            <img src="finallogo.png" alt="SMYM Chirakkadavu Emblem Logo" class="navbar-emblem">
             <div>
-                <h3><a href="index.html" style="text-decoration:none; color:inherit;">aima<span>.</span></a></h3>
+                <h3><a href="index.html" style="text-decoration:none; color:inherit;">aima</a></h3>
                 <span>SMYM Chirakkadavu</span>
             </div>
         </div>
         <nav class="links">
             <a href="register.html">Become a Donor</a>
-            <a href="find.html">Find a Donor</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
     </header>
 
